@@ -48,16 +48,16 @@ type LoginHistory struct {
 
 func NewClient() (*opensearch.Client, error) {
 	address := os.Getenv("OPEN_SEARCH_ENDPOINT")
-	user := os.Getenv("OPEN_SEARCH_MASTER_USER_NAME")
-	pw := os.Getenv("OPEN_SEARCH_MASTER_USER_PASSWORD")
+	//user := os.Getenv("OPEN_SEARCH_MASTER_USER_NAME")
+	//pw := os.Getenv("OPEN_SEARCH_MASTER_USER_PASSWORD")
 
 	return opensearch.NewClient(opensearch.Config{
 		Transport: &http.Transport{
 			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		},
 		Addresses: []string{address},
-		Username:  user,
-		Password:  pw,
+		//Username:  user,
+		//Password:  pw,
 	})
 }
 
